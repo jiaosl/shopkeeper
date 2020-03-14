@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 
-class PicturePage extends StatefulWidget {
-  PicturePage({Key key}) : super(key: key);
+class LoginPage extends StatefulWidget {
+  LoginPage({Key key}) : super(key: key);
 
   @override
-  _PicturePageState createState() => _PicturePageState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class _PicturePageState extends State<PicturePage> {
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            '照片',
+            '登录',
           ),
           centerTitle: true,
         ),
         body: Container(
-          child: Text("照片页面"),
+          child: Text("登陆页面"),
         ));
   }
 }

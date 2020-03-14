@@ -1,17 +1,24 @@
 import 'package:flutter/material.dart';
 
-class PicturePage extends StatefulWidget {
-  PicturePage({Key key}) : super(key: key);
+class VideoPage extends StatefulWidget {
+  VideoPage({Key key}) : super(key: key);
 
   @override
   _PicturePageState createState() => _PicturePageState();
 }
 
-class _PicturePageState extends State<PicturePage> {
+class _PicturePageState extends State<VideoPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("视频"),
-    );
+     return Scaffold(
+        appBar: AppBar(
+          title: Text(
+            '视频',
+          ),
+          centerTitle: true,
+        ),
+        body: Container(
+          child: Text("视频页面"),
+        ));
   }
 }
