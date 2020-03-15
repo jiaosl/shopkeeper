@@ -17,6 +17,7 @@ samples, guidance on mobile development, and a full API reference.
 
 
 #目录结构
+    assets      图片资源
     android     安卓目录
     ios         苹果目录
     lib         flutter目录
@@ -31,3 +32,4 @@ samples, guidance on mobile development, and a full API reference.
         9).model         数据流处理
         10).api          网络请求相关
         11).demo         部分功能使用例子
+        
