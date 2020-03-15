@@ -51,8 +51,35 @@ class _DemoState extends State<Demo> {
     //String userId = "1"; 
     //Application.getInstance().router.navigateTo(context,'${Routes.login}?${RountesParamsKey.USER_ID}=$userId'),
 
-    //自动序列化
+    //6.自动序列化
     //flutter packages pub run build_runner build
     //flutter packages pub run build_runner build --delete-conflicting-outputs  //删除并重新创建.g.dart文件
+
+    //7.api
+    // 返回 LoginEntity
+    // DioManager().request<LoginEntity>(
+    //   NWMethod.POST,
+    //   NWApi.loginPath,
+    //   params: {"account": "421789838@qq.com", "password": "123456"},
+    //   success: (data) {
+    //       print("success data = $data"});
+    //   }, error: (error) {
+    //       print("error code = ${error.code}, massage = ${error.message}");
+    //   }
+    // );
+
+    // // 返回 List
+    // DioManager().requestList<LoginEntity>(
+    //   NWMethod.POST,
+    //   NWApi.queryListJsonPath,
+    //   params: {"account": "421789838@qq.com", "password": "123456"},
+    //   success: (data) {
+    //       print("success data = $data"});
+    //   }, error: (error) {
+    //       print("error code = ${error.code}, massage = ${error.message}");
+    //   }
+    // );
+
+    //8.
   }
 }

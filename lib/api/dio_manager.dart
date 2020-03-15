@@ -12,7 +12,7 @@ class DioManager {
   DioManager._internal() {
     if (dio == null) {
       BaseOptions options = BaseOptions(
-        baseUrl: NWApi.baseApi,
+        baseUrl: ApiParamsKey.baseApi,
         contentType: Headers.jsonContentType,
         responseType: ResponseType.json,
         receiveDataWhenStatusError: false,
