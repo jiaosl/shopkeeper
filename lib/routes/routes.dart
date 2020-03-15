@@ -12,17 +12,17 @@ class Routes {
     router.define(
       login,
       handler: loginHandler,
-      transitionType: TransitionType.inFromRight,
+      // transitionType: TransitionType.inFromRight,
     );
     router.define(
       picture,
       handler: pictureHandler,
-      transitionType: TransitionType.inFromRight,
+      // transitionType: TransitionType.inFromRight,
     );
     router.define(
       video,
       handler: videoHandler,
-      transitionType: TransitionType.inFromRight,
+      // transitionType: TransitionType.inFromRight,
     );
   }
 }
