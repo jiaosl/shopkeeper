@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:fezs_shopkeeper/event/event_bus.dart';
 import 'package:fezs_shopkeeper/routes/routes.dart';
 import 'package:fezs_shopkeeper/utils/shared_preferences_utils.dart';
@@ -9,6 +10,7 @@ class Application {
   Router router;
   EventBus eventBus;
   SpUtils sp;
+  Dio dio;
 
   static final Application application = Application._create();
 
@@ -25,6 +27,7 @@ class Application {
     _initRouter();
     _initEventBus();
     _initStatusBarTransparent();
+    _initDio();
   }
 
   _initSp() async {
@@ -50,7 +53,18 @@ class Application {
     // }
   }
 
+  _initDio() {
+    BaseOptions options = new BaseOptions(
+      baseUrl: "https://www.xx.com/api",
+      connectTimeout: 5000,
+      receiveTimeout: 3000,
+    );
+
+    dio = new Dio(options);
+    dio.interceptors.add(LogInterceptor(responseBody: true)); //开启请求日志
+  }
+
   void initScreen(BuildContext context) {
-    ScreenUtil.init(context,width: 750, height: 1334, allowFontScaling: false);
+    ScreenUtil.init(context, width: 750, height: 1334, allowFontScaling: false);
   }
 }

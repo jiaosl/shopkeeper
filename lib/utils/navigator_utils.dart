@@ -39,6 +39,11 @@ class NavigatorUtil {
     /// 指定了 转场动画
   }
 
+  static Future jumpAndReplace(BuildContext context, String title) {
+    return Application.getInstance().router.navigateTo(context, title,
+        transition: TransitionType.inFromRight, replace: true);
+  }
+
   static Future jumpRemove(BuildContext context) {
     return Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(
