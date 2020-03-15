@@ -50,5 +50,9 @@ class _DemoState extends State<Demo> {
     //5.路由跳转
     //String userId = "1"; 
     //Application.getInstance().router.navigateTo(context,'${Routes.login}?${RountesParamsKey.USER_ID}=$userId'),
+
+    //自动序列化
+    //flutter packages pub run build_runner build
+    //flutter packages pub run build_runner build --delete-conflicting-outputs  //删除并重新创建.g.dart文件
   }
 }
