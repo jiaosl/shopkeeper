@@ -32,4 +32,5 @@ samples, guidance on mobile development, and a full API reference.
         9).model         数据流处理
         10).api          网络请求相关
         11).demo         部分功能使用例子
+        12).channel      平台通信
         

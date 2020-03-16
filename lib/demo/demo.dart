@@ -80,6 +80,9 @@ class _DemoState extends State<Demo> {
     //   }
     // );
 
-    //8.
+    //8.设置宽高和字体大小
+    // ScreenUtil.getInstance().setWidth(44)
+    // ScreenUtil.getInstance().setHeight(42)
+    // ScreenUtil.getInstance().setSp(42)
   }
 }
