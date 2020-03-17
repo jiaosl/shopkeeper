@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      NavigatorUtil.gotransitionCustomDemoPage(context, Routes.video);
+                      // NavigatorUtil.gotransitionCustomDemoPage(context, Routes.video);
                     },
                     child: Text('去视频页面'),
                   )

@@ -48,7 +48,7 @@ class _DemoState extends State<Demo> {
     //-->查看redux目录
 
     //5.路由跳转
-    //String userId = "1"; 
+    //String userId = "1";
     //Application.getInstance().router.navigateTo(context,'${Routes.login}?${RountesParamsKey.USER_ID}=$userId'),
 
     //6.自动序列化
@@ -84,5 +84,16 @@ class _DemoState extends State<Demo> {
     // ScreenUtil.getInstance().setWidth(44)
     // ScreenUtil.getInstance().setHeight(42)
     // ScreenUtil.getInstance().setSp(42)
+
+    //9.toast
+    // Fluttertoast.showToast(
+    //     msg: "This is Center Short Toast",
+    //     toastLength: Toast.LENGTH_SHORT,
+    //     gravity: ToastGravity.CENTER,
+    //     timeInSecForIos: 1,
+    //     backgroundColor: Colors.red,
+    //     textColor: Colors.white,
+    //     fontSize: 16.0
+    // );
   }
 }
