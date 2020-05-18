@@ -1,20 +1,21 @@
-import 'dart:async';
-import 'dart:convert';
 import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
+
 import 'package:webview_flutter/webview_flutter.dart';
 
+import 'dart:convert' as convert;
 
 class WebViewPage extends StatefulWidget {
-  WebViewPage({Key key}) : super(key: key);
-
   @override
-  _WebViewPageState createState() => _WebViewPageState();
+  State<StatefulWidget> createState() => _WebViewPageState();
 }
 
 class _WebViewPageState extends State<WebViewPage> {
   WebViewController _controller;
+
   String _title = "webview";
+
   String msg = "";
 
   @override
@@ -43,10 +44,11 @@ class _WebViewPageState extends State<WebViewPage> {
                     "https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2462146637,4274174245&fm=26&gp=0.jpg",
                     "https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4142587453,3986655608&fm=26&gp=0.jpg"
                   ];
-                  // String jsonStringA = convert.jsonEncode(list);
 
-                  // _controller
-                  //     .evaluateJavascript("showToast('$jsonStringA','list')");
+                  String jsonStringA = convert.jsonEncode(list);
+
+                  _controller
+                      .evaluateJavascript("showToast('$jsonStringA','list')");
                 },
                 child: Text(
                   "点击给js发送4张图片",

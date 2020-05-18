@@ -1,8 +1,14 @@
+import 'package:fezs_shopkeeper/application.dart';
 import 'package:fezs_shopkeeper/bean/user.dart';
 import 'package:fezs_shopkeeper/model/user_model.dart';
+import 'package:fezs_shopkeeper/pages/login_page.dart';
+import 'package:fezs_shopkeeper/pages/picture_page.dart';
+import 'package:fezs_shopkeeper/pages/video_page.dart';
 import 'package:fezs_shopkeeper/redux/app.dart';
 import 'package:fezs_shopkeeper/routes/routes.dart';
 import 'package:fezs_shopkeeper/utils/navigator_utils.dart';
+// import 'package:fezs_shopkeeper/routes/routes.dart';
+// import 'package:fezs_shopkeeper/utils/navigator_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
@@ -17,6 +23,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    Application.getInstance().initScreen(context);
     return Scaffold(
       appBar: AppBar(
         title: Text("首页"),
@@ -42,22 +49,31 @@ class _HomePageState extends State<HomePage> {
                   Text('store中的user的age为 : ${store.state.user.age}'),
                   GestureDetector(
                     onTap: () {
-                      NavigatorUtil.gotransitionCustomDemoPage(context, Routes.login);
+                      NavigatorUtil.jump(context, Routes.login);
+                      // Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      //   return LoginPage();
+                      //  }));
                     },
                     child: Text('去登陆页面'),
                   ),
                   GestureDetector(
                     onTap: () {
-                      NavigatorUtil.gotransitionCustomDemoPage(context, Routes.picture);
+                      NavigatorUtil.jump(context, Routes.picture);
+                      //     Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      //   return PicturePage();
+                      //  }));
                     },
                     child: Text('去图片页面'),
                   ),
                   GestureDetector(
                     onTap: () {
-                      // NavigatorUtil.gotransitionCustomDemoPage(context, Routes.video);
+                      NavigatorUtil.jump(context, Routes.video);
+                      //       Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      //   return VideoPage();
+                      //  }));
                     },
                     child: Text('去视频页面'),
-                  )
+                  ),
                 ],
               ),
             );

@@ -1,3 +1,4 @@
+import 'package:fezs_shopkeeper/components/my_camera.dart';
 import 'package:flutter/material.dart';
 
 class VideoPage extends StatefulWidget {
@@ -10,7 +11,7 @@ class VideoPage extends StatefulWidget {
 class _PicturePageState extends State<VideoPage> {
   @override
   Widget build(BuildContext context) {
-     return Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: Text(
             '视频',
@@ -18,7 +19,8 @@ class _PicturePageState extends State<VideoPage> {
           centerTitle: true,
         ),
         body: Container(
-          child: Text("视频页面"),
+          // child: Text("视频页面"),
+          child: MyCamera(),
         ));
   }
 }

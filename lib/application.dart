@@ -12,6 +12,7 @@ class Application {
   EventBus eventBus;
   SpUtils sp;
   Dio dio;
+  ScreenUtil screenUtil;
 
   static final Application application = Application._create();
 
@@ -60,6 +61,10 @@ class Application {
   }
 
   void initScreen(BuildContext context) {
-    ScreenUtil.init(context, width: 750, height: 1334, allowFontScaling: false);
+    if (screenUtil == null) {
+      ScreenUtil.init(context,
+          width: 750, height: 1334, allowFontScaling: false);
+      screenUtil = ScreenUtil();
+    }
   }
 }

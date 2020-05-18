@@ -1,3 +1,4 @@
+import 'package:fezs_shopkeeper/application.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -10,6 +11,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
+    Application.getInstance().initScreen(context);
     return Scaffold(
         appBar: AppBar(
           title: Text(

@@ -6,7 +6,7 @@ import 'package:fezs_shopkeeper/redux/app.dart';
 import 'package:fezs_shopkeeper/redux/reducer/common_reducer.dart';
 
 class UserModel {
-  var user = User();
+  User user;
 
   var _subject = StreamController<User>.broadcast();
   Sink<User> get inData => _subject.sink;
@@ -22,6 +22,7 @@ class UserModel {
   void addAge() {
     if (user == null) {
       user = User();
+      user.age = 0;
     }
     user.age = user.age + 1;
     inData.add(user);

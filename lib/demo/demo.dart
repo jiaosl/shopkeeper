@@ -49,7 +49,7 @@ class _DemoState extends State<Demo> {
 
     //5.路由跳转
     //String userId = "1";
-    //Application.getInstance().router.navigateTo(context,'${Routes.login}?${RountesParamsKey.USER_ID}=$userId'),
+    //NavigatorUtil.jump(context,'${Routes.login}?${RountesParamsKey.USER_ID}=$userId'),
 
     //6.自动序列化
     //flutter packages pub run build_runner build
@@ -81,9 +81,9 @@ class _DemoState extends State<Demo> {
     // );
 
     //8.设置宽高和字体大小
-    // ScreenUtil.getInstance().setWidth(44)
-    // ScreenUtil.getInstance().setHeight(42)
-    // ScreenUtil.getInstance().setSp(42)
+    // ScreenUtil.setWidth(44)
+    // ScreenUtil.setHeight(42)
+    // ScreenUtil.setSp(42)
 
     //9.toast
     // Fluttertoast.showToast(
