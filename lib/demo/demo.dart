@@ -95,5 +95,11 @@ class _DemoState extends State<Demo> {
     //     textColor: Colors.white,
     //     fontSize: 16.0
     // );
+
+
+
+    //其他  
+    //微信sdk  : https://www.jianshu.com/p/658b4d9b960f
+    //保存tab栏目状态  :  https://cloud.tencent.com/developer/article/1507094
   }
 }

@@ -74,6 +74,15 @@ class _HomePageState extends State<HomePage> {
                     },
                     child: Text('去视频页面'),
                   ),
+                  GestureDetector(
+                    onTap: () {
+                      NavigatorUtil.jump(context, Routes.login);
+                      //       Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      //   return VideoPage();
+                      //  }));
+                    },
+                    child: Text('去登陆页面'),
+                  ),
                 ],
               ),
             );

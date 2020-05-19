@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:fezs_shopkeeper/application.dart';
 import 'package:fezs_shopkeeper/pages/home_page.dart';
+import 'package:fezs_shopkeeper/pages/tabs.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: Tabs(),
       // onGenerateRoute: Application.getInstance().router.generator,
     );
   }
