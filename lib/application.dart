@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:fezs_shopkeeper/api/dio_manager.dart';
 import 'package:fezs_shopkeeper/event/event_bus.dart';
 import 'package:fezs_shopkeeper/routes/routes.dart';
-import 'package:fezs_shopkeeper/utils/shared_preferences_utils.dart';
+import 'package:fezs_shopkeeper/utils/shared_preferences_manager.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,7 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class Application {
   Router router;
   EventBus eventBus;
-  SpUtils sp;
+  SpManager sp;
   Dio dio;
   ScreenUtil screenUtil;
 
@@ -33,7 +33,7 @@ class Application {
   }
 
   _initSp() async {
-    sp = await SpUtils.getInstance();
+    sp = await SpManager.getInstance();
   }
 
   _initRouter() {

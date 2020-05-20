@@ -4,17 +4,17 @@ import 'package:flutter/material.dart';
 /**
  * 正式release版本不打印日志
  */
-class LogUtils {
-  static final LogUtils _singleton = LogUtils._create();
+class LogManager {
+  static final LogManager _singleton = LogManager._create();
 
-  factory LogUtils.getInstance() {
+  factory LogManager.getInstance() {
     return _singleton;
   }
 
-  LogUtils._create() {}
+  LogManager._create() {}
 
   void prints(Object object) {
-    _prints(LogParamsKey.info, object);
+    _prints(LogParamsKey.INFO, object);
   }
 
   void _prints(String tag, Object object) {

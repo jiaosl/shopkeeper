@@ -7,10 +7,10 @@ class SpParamsKey {
 }
 
 class LogParamsKey {
-  static const String error = "error";
-  static const String debug = "debug";
-  static const String info = "info";
-  static const String warm = "warm";
+  static const String ERROR = "error";
+  static const String DEBUG = "debug";
+  static const String INFO = "info";
+  static const String WARM = "warm";
 }
 
 class ApiParamsKey {
@@ -18,4 +18,12 @@ class ApiParamsKey {
   static final loginPath = "user/login";//接口返回：{"code": int, "message": "String", "data": {"account": "String", "password": "String"}}
   static final queryListPath = "/query/list";//接口返回：{"code": ing, "message": "String", "data": [int, int, String, int, String, int]}
   static final queryListJsonPath = "/query/listjson";//接口返回：{"code": int, "message": "String", "data": [{"account": "String", "password": "String"}， {"account": "String", "password": "String"}]}
+}
+
+class JsCommunicationParamsKey{
+  static const String TOKEN = "token";
+  static const String LATITUDE = "latitude";
+  static const String LONGITUDE = "longitude";
+  static const String LOCATION = "location";
+  static const String QRCODE = "qrcode";
 }

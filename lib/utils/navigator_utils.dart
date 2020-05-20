@@ -8,7 +8,6 @@ import 'package:fluro/fluro.dart';
 class NavigatorUtil {
   // 返回
   static void goBack(BuildContext context) {
-    /// 其实这边调用的是 Navigator.pop(context);
     Application.getInstance().router.pop(context);
   }
 

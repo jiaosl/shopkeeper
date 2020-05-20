@@ -4,7 +4,7 @@ class CommonUtils {
   /**
    * 清理数据缓存
    */
-  clearData() {
+  static clearData() {
     store?.state?.clearState();
   }
 }
