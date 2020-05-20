@@ -5,7 +5,7 @@ import 'package:fezs_shopkeeper/bean/user.dart';
 import 'package:fezs_shopkeeper/redux/app.dart';
 import 'package:fezs_shopkeeper/redux/reducer/common_reducer.dart';
 
-class UserModel {
+class DemoUserModel {
   User user;
 
   var _subject = StreamController<User>.broadcast();

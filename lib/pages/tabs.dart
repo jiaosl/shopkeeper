@@ -1,5 +1,9 @@
 import 'package:fezs_shopkeeper/components/webview.dart';
+import 'package:fezs_shopkeeper/pages/customer_management_page.dart';
+import 'package:fezs_shopkeeper/pages/knowledge_base.dart';
 import 'package:fezs_shopkeeper/pages/login_page.dart';
+import 'package:fezs_shopkeeper/pages/performance_statistics.dart';
+import 'package:fezs_shopkeeper/pages/personal_center.dart';
 import 'package:flutter/material.dart';
 
 class Tabs extends StatefulWidget {
@@ -11,7 +15,13 @@ class Tabs extends StatefulWidget {
 class _TabsState extends State<Tabs> {
   int _currentIndex = 0; //记录当前选中哪个页面
 
-  List<Widget> _pages = [LoginPage(), WebViewPage(), LoginPage(), LoginPage()];
+  List<Widget> _pages = [
+    CustomerManagement(),
+    PerformanceStatistics(),
+    KnowledgeBase(),
+    PersonalCenter(),
+    WebViewPage(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +42,10 @@ class _TabsState extends State<Tabs> {
               icon: Icon(Icons.category), title: Text("业绩统计")),
           BottomNavigationBarItem(
               icon: Icon(Icons.shopping_cart), title: Text("知识库")),
-          BottomNavigationBarItem(icon: Icon(Icons.people), title: Text("个人中心"))
+          BottomNavigationBarItem(
+              icon: Icon(Icons.people), title: Text("个人中心")),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.people), title: Text("webView"))
         ],
       ),
     );

@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
 class HomePage extends StatefulWidget {
-  var userModel = UserModel();
+  var userModel = DemoUserModel();
   HomePage({Key key}) : super(key: key);
 
   @override
