@@ -13,7 +13,10 @@ class Tabs extends StatefulWidget {
 }
 
 class _TabsState extends State<Tabs> {
-  int _currentIndex = 0; //记录当前选中哪个页面
+  //记录当前选中哪个页面
+  int _currentIndex = 0;
+  //第1步，声明PageController
+  PageController _pageController;
 
   List<Widget> _pages = [
     CustomerManagement(),
@@ -24,16 +27,32 @@ class _TabsState extends State<Tabs> {
   ];
 
   @override
+  void initState() {
+    super.initState();
+    //第2步，初始化PageController
+    this._pageController = PageController(initialPage: this._currentIndex);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child: this._pages[this._currentIndex]),
+      // body: SafeArea(child: this._pages[this._currentIndex]),
+      //第3步，将body设置成PageView,并配置PageView的controller属性
+      body: PageView(
+        controller: this._pageController,
+        children: this._pages,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         fixedColor: Colors.red, //底部导航栏按钮选中时的颜色
         type: BottomNavigationBarType.fixed, //底部导航栏的适配，当item多的时候都展示出来
         currentIndex: this._currentIndex,
         onTap: (index) {
           setState(() {
+            // this._currentIndex = index;
+            
+            //第4步，设置点击底部Tab的时候的页面跳转
             this._currentIndex = index;
+            this._pageController.jumpToPage(this._currentIndex);
           });
         },
         items: [
