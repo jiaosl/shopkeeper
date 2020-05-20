@@ -96,6 +96,16 @@ class _DemoState extends State<Demo> {
     //     fontSize: 16.0
     // );
 
+    //10.widget追加点击事件
+    //  GestureDetector(
+    //                     onTap: () {
+    //                       NavigatorUtil.jump(context, Routes.login);
+    //                       //       Navigator.push(context, MaterialPageRoute(builder: (context) {
+    //                       //   return VideoPage();
+    //                       //  }));
+    //                     },
+    //                     child: Text('去登陆页面'),
+    //                   ),
 
 
     //其他  

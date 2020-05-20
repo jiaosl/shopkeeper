@@ -35,13 +35,11 @@ class NavigatorUtil {
     return Application.getInstance()
         .router
         .navigateTo(context, title, transition: TransitionType.inFromRight);
-
-    /// 指定了 转场动画
   }
 
-  static Future jumpAndReplace(BuildContext context, String title) {
+  static Future jumpAndReplace(BuildContext context, String title, {bool replase = true}) {
     return Application.getInstance().router.navigateTo(context, title,
-        transition: TransitionType.inFromRight, replace: true);
+        transition: TransitionType.inFromRight, replace: replase);
   }
 
   static Future jumpRemove(BuildContext context) {
@@ -50,27 +48,6 @@ class NavigatorUtil {
           builder: (context) => HomePage(),
         ),
         (route) => route == null);
-  }
-
-  /// 自定义 转场动画
-  static Future gotransitionCustomDemoPage(BuildContext context, String title) {
-    var transition = (BuildContext context, Animation<double> animation,
-        Animation<double> secondaryAnimation, Widget child) {
-      return new ScaleTransition(
-          scale: animation,
-          child: new RotationTransition(
-            turns: animation,
-            child: child,
-          ));
-    };
-    return Application.getInstance().router.navigateTo(context, title,
-        transition: TransitionType.custom,
-
-        /// 指定是自定义动画
-        transitionBuilder: transition,
-
-        /// 自定义的动画
-        transitionDuration: const Duration(milliseconds: 00));
   }
 
   /// 使用 IOS 的 Cupertino 的转场动画，这个是修改了源码的 转场动画
@@ -98,5 +75,26 @@ class NavigatorUtil {
           builder: (context) => LoginPage(),
         ),
         (route) => route == null);
+  }
+
+  /// 自定义 转场动画
+  static Future gotransitionCustomDemoPage(BuildContext context, String title) {
+    var transition = (BuildContext context, Animation<double> animation,
+        Animation<double> secondaryAnimation, Widget child) {
+      return new ScaleTransition(
+          scale: animation,
+          child: new RotationTransition(
+            turns: animation,
+            child: child,
+          ));
+    };
+    return Application.getInstance().router.navigateTo(context, title,
+        transition: TransitionType.custom,
+
+        /// 指定是自定义动画
+        transitionBuilder: transition,
+
+        /// 自定义的动画
+        transitionDuration: const Duration(milliseconds: 00));
   }
 }

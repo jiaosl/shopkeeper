@@ -5,12 +5,12 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:multi_image_picker/multi_image_picker.dart';
 
-class CustomerManagement extends StatefulWidget {
+class CustomerManagementPage extends StatefulWidget {
   @override
-  _CustomerManagementState createState() => _CustomerManagementState();
+  _CustomerManagementPageState createState() => _CustomerManagementPageState();
 }
 
-class _CustomerManagementState extends State<CustomerManagement>
+class _CustomerManagementPageState extends State<CustomerManagementPage>
     with AutomaticKeepAliveClientMixin, ToastMixin {
   @override
   void initState() {

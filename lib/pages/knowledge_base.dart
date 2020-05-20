@@ -3,12 +3,12 @@ import 'package:fezs_shopkeeper/redux/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
-class KnowledgeBase extends StatefulWidget {
+class KnowledgeBasePage extends StatefulWidget {
   @override
-  _KnowledgeBaseState createState() => _KnowledgeBaseState();
+  _KnowledgeBasePageState createState() => _KnowledgeBasePageState();
 }
 
-class _KnowledgeBaseState extends State<KnowledgeBase>
+class _KnowledgeBasePageState extends State<KnowledgeBasePage>
     with AutomaticKeepAliveClientMixin, ToastMixin {
   @override
   Widget build(BuildContext context) {

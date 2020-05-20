@@ -6,23 +6,27 @@ import 'package:fezs_shopkeeper/pages/performance_statistics.dart';
 import 'package:fezs_shopkeeper/pages/personal_center.dart';
 import 'package:flutter/material.dart';
 
-class Tabs extends StatefulWidget {
-  Tabs({Key key}) : super(key: key);
+/**
+ * Tab状态存储 :
+ *     https://cloud.tencent.com/developer/article/1507094
+ */
+class TabsPage extends StatefulWidget {
+  TabsPage({Key key}) : super(key: key);
 
-  _TabsState createState() => _TabsState();
+  _TabsPageState createState() => _TabsPageState();
 }
 
-class _TabsState extends State<Tabs> {
+class _TabsPageState extends State<TabsPage> {
   //记录当前选中哪个页面
   int _currentIndex = 0;
   //第1步，声明PageController
   PageController _pageController;
 
   List<Widget> _pages = [
-    CustomerManagement(),
-    PerformanceStatistics(),
-    KnowledgeBase(),
-    PersonalCenter(),
+    CustomerManagementPage(),
+    PerformanceStatisticsPage(),
+    KnowledgeBasePage(),
+    PersonalCenterPage(),
     WebViewPage(),
   ];
 
@@ -49,7 +53,7 @@ class _TabsState extends State<Tabs> {
         onTap: (index) {
           setState(() {
             // this._currentIndex = index;
-            
+
             //第4步，设置点击底部Tab的时候的页面跳转
             this._currentIndex = index;
             this._pageController.jumpToPage(this._currentIndex);

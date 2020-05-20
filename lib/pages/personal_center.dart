@@ -3,12 +3,12 @@ import 'package:fezs_shopkeeper/redux/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
-class PersonalCenter extends StatefulWidget {
+class PersonalCenterPage extends StatefulWidget {
   @override
-  _PersonalCenterState createState() => _PersonalCenterState();
+  _PersonalCenterPageState createState() => _PersonalCenterPageState();
 }
 
-class _PersonalCenterState extends State<PersonalCenter> with AutomaticKeepAliveClientMixin, ToastMixin{
+class _PersonalCenterPageState extends State<PersonalCenterPage> with AutomaticKeepAliveClientMixin, ToastMixin{
   @override
   Widget build(BuildContext context) {
     return Scaffold(

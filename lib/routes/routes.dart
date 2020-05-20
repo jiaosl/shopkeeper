@@ -8,6 +8,14 @@ class Routes {
   static String picture = '/picture'; //图片页面
   static String video = '/video'; //视频页面
 
+  /**
+   * tab栏目
+   */
+  static String customerManagement = '/customer_management'; //客户管理
+  static String personalCenter = '/personal_center'; //个人中心
+  static String performanceStatistics = '/performance_statistics'; //业绩统计
+  static String knowledgeBase = '/knowledge_base'; //知识库
+
   static configureRoutes(Router router) {
     router.define(
       login,
