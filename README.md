@@ -33,4 +33,5 @@ samples, guidance on mobile development, and a full API reference.
         10).api          网络请求相关
         11).demo         部分功能使用例子
         12).channel      平台通信
+        13).mixin        混入(类比多继承)
         

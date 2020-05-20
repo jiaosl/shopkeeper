@@ -1,3 +1,4 @@
+import 'package:fezs_shopkeeper/mixin/toast_mixin.dart';
 import 'package:fezs_shopkeeper/redux/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
@@ -7,7 +8,7 @@ class PersonalCenter extends StatefulWidget {
   _PersonalCenterState createState() => _PersonalCenterState();
 }
 
-class _PersonalCenterState extends State<PersonalCenter> {
+class _PersonalCenterState extends State<PersonalCenter> with AutomaticKeepAliveClientMixin, ToastMixin{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,4 +26,7 @@ class _PersonalCenterState extends State<PersonalCenter> {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

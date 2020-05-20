@@ -1,3 +1,4 @@
+import 'package:fezs_shopkeeper/mixin/toast_mixin.dart';
 import 'package:fezs_shopkeeper/redux/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
@@ -7,10 +8,11 @@ class KnowledgeBase extends StatefulWidget {
   _KnowledgeBaseState createState() => _KnowledgeBaseState();
 }
 
-class _KnowledgeBaseState extends State<KnowledgeBase> {
+class _KnowledgeBaseState extends State<KnowledgeBase>
+    with AutomaticKeepAliveClientMixin, ToastMixin {
   @override
   Widget build(BuildContext context) {
-   return Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: Text("知识库"),
         centerTitle: true,
@@ -25,4 +27,7 @@ class _KnowledgeBaseState extends State<KnowledgeBase> {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

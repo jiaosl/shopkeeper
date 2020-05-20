@@ -1,4 +1,4 @@
-
+import 'package:fezs_shopkeeper/mixin/toast_mixin.dart';
 import 'package:fezs_shopkeeper/redux/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
@@ -8,7 +8,8 @@ class PerformanceStatistics extends StatefulWidget {
   _PerformanceStatisticsState createState() => _PerformanceStatisticsState();
 }
 
-class _PerformanceStatisticsState extends State<PerformanceStatistics> {
+class _PerformanceStatisticsState extends State<PerformanceStatistics>
+    with AutomaticKeepAliveClientMixin, ToastMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,4 +27,7 @@ class _PerformanceStatisticsState extends State<PerformanceStatistics> {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
