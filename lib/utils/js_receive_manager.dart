@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:fezs_shopkeeper/consts/params_key.dart';
 import 'package:fezs_shopkeeper/utils/log_manager.dart';
 
 class JsReceiveManager {
@@ -19,16 +20,23 @@ class JsReceiveManager {
 
     if (!map.containsKey('type')) {
       LogManager.getInstance().prints("JsReceiveManager : 数据异常,无type字段");
+      return;
     }
     if (!map.containsKey('data')) {
       LogManager.getInstance().prints("JsReceiveManager : 数据异常,无data字段");
+      return;
     }
 
     int type = map['type'];
     Map<String, dynamic> data = map['data'];
 
+    if (!data.containsKey(JsCommunicationParamsKey.TOKEN)) {
+      LogManager.getInstance().prints("JsReceiveManager : 数据异常,无token字段");
+      return;
+    }
     if (!checkData(data)) {
       LogManager.getInstance().prints("JsReceiveManager : token校验失败");
+      return;
     }
 
     switch (type) {
@@ -95,6 +103,9 @@ class JsReceiveManager {
    * 校验数据
    */
   bool checkData(Map<String, dynamic> data) {
+    String token = data[JsCommunicationParamsKey.TOKEN];
+    //todo : 校验 token 
+
     return true;
   }
 }

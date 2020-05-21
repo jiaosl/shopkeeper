@@ -21,9 +21,12 @@ class ApiParamsKey {
 }
 
 class JsCommunicationParamsKey{
+  static const String TYPE = "type";
+  static const String DATA = "data";
   static const String TOKEN = "token";
   static const String LATITUDE = "latitude";
   static const String LONGITUDE = "longitude";
   static const String LOCATION = "location";
   static const String QRCODE = "qrcode";
+  static const String IMGS = "imgs";
 }
