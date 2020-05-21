@@ -6,8 +6,8 @@ import 'package:fezs_shopkeeper/pages/tabs.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  Application.getInstance().init();
   runApp(MyApp());
+  Application.getInstance().init();
 }
 
 class MyApp extends StatelessWidget {

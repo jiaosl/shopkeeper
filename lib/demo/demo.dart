@@ -54,6 +54,7 @@ class _DemoState extends State<Demo> {
     //6.自动序列化
     //flutter packages pub run build_runner build
     //flutter packages pub run build_runner build --delete-conflicting-outputs  //删除并重新创建.g.dart文件
+    //flutter packages pub run build_runner wacth 监控生成文件，如果有改动时自动生成/更新 .g.dart 文件
 
     //7.api
     // 返回 LoginEntity
@@ -107,6 +108,9 @@ class _DemoState extends State<Demo> {
     //                     child: Text('去登陆页面'),
     //                   ),
 
+    //对象转json字符串
+    //import 'dart:convert' as convert;
+    //convert.jsonEncode(bean)
 
     //其他  
     //微信sdk  : https://www.jianshu.com/p/658b4d9b960f

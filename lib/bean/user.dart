@@ -1,3 +1,4 @@
+import 'package:fezs_shopkeeper/bean/man.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'user.g.dart';
 
@@ -7,6 +8,8 @@ class User {
 
   @JsonKey(nullable: false)
   int age = 0;
+
+  String man;
 
   User({this.name, this.age});
 

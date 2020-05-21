@@ -1,3 +1,5 @@
+import 'package:fezs_shopkeeper/consts/params_key.dart';
+
 class JsSendManager {
   static final JsSendManager _singleton = JsSendManager._create();
 
@@ -34,5 +36,7 @@ class JsSendManager {
   /**
    * 基础数据
    */
-  void combinationBaseParams(Map<String, dynamic> json) {}
+  void combinationBaseParams(Map<String, dynamic> json) {
+    json[JsCommunicationParamsKey.TOKEN] = "token";
+  }
 }
