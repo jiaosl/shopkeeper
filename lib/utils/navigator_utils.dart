@@ -1,13 +1,13 @@
 import 'package:fezs_shopkeeper/application.dart';
+import 'package:fezs_shopkeeper/consts/params_key.dart';
 import 'package:fezs_shopkeeper/pages/home_page.dart';
-import 'package:fezs_shopkeeper/pages/login_page.dart';
-import 'package:fezs_shopkeeper/routes/routes.dart';
+import 'package:fezs_shopkeeper/utils/log_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 
 class NavigatorUtil {
   // 返回
-  static void goBack(BuildContext context) {
+  static void pop(BuildContext context) {
     Application.getInstance().router.pop(context);
   }
 
@@ -16,38 +16,29 @@ class NavigatorUtil {
     Navigator.pop(context, result);
   }
 
-  // 路由返回指定页面
-  static void goBackUrl(BuildContext context, String title) {
-    Navigator.popAndPushNamed(context, title);
-  }
-
-  // 跳转到主页面
-  static void goHomePage(BuildContext context) {
+  // 去指定页面
+  static void navigateTo(BuildContext context, String title,
+      {Function function, bool repalce = false}) {
     Application.getInstance()
         .router
-        .navigateTo(context, Routes.login, replace: true);
+        .navigateTo(context, title,
+            replace: repalce, transition: TransitionType.inFromRight)
+        .then((value) => {
+              (function == null)
+                  ? LogManager.getInstance()
+                      .prints(value, type: LogParamsKey.VERBOSE)
+                  : function(value)
+            });
   }
 
-  /// 跳转到 转场动画 页面 ， 这边只展示 inFromLeft ，剩下的自己去尝试下，
-  /// 框架自带的有 native，nativeModal，inFromLeft，inFromRight，inFromBottom，fadeIn，custom
-  static Future jump(BuildContext context, String title) {
-    return Application.getInstance()
-        .router
-        .navigateTo(context, title, transition: TransitionType.inFromRight);
-  }
-
-  static Future jumpAndReplace(BuildContext context, String title, {bool replase = true}) {
-    return Application.getInstance().router.navigateTo(context, title,
-        transition: TransitionType.inFromRight, replace: replase);
-  }
-
-  static Future jumpRemove(BuildContext context) {
-    return Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(
-          builder: (context) => HomePage(),
-        ),
+  //去首页闭关删除所有页面
+  static void navigateToHomeRemoveAll(BuildContext context) {
+    Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (context) => new HomePage()),
         (route) => route == null);
   }
+
+  ///----------------------------------------------------分割线-----------------------------------------------------
 
   /// 使用 IOS 的 Cupertino 的转场动画，这个是修改了源码的 转场动画
   /// Fluro本身不带，但是 Flutter自带
@@ -56,24 +47,6 @@ class NavigatorUtil {
     return Application.getInstance()
         .router
         .navigateTo(context, title, transition: TransitionType.cupertino);
-  }
-
-  // 跳转到主页面HomePage并删除当前路由
-  static void goToHomeRemovePage(BuildContext context) {
-    Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(
-          builder: (context) => HomePage(),
-        ),
-        (route) => route == null);
-  }
-
-  // 跳转到登录页并删除当前路由
-  static void goToLoginRemovePage(BuildContext context) {
-    Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(
-          builder: (context) => LoginPage(),
-        ),
-        (route) => route == null);
   }
 
   /// 自定义 转场动画

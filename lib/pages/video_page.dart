@@ -1,4 +1,7 @@
-import 'package:fezs_shopkeeper/components/my_camera.dart';
+import 'package:fezs_shopkeeper/mixin/toast_mixin.dart';
+import 'package:fezs_shopkeeper/routes/routes.dart';
+import 'package:fezs_shopkeeper/utils/navigator_utils.dart';
+import 'package:fezs_shopkeeper/values/styles.dart';
 import 'package:flutter/material.dart';
 
 class VideoPage extends StatefulWidget {
@@ -8,7 +11,7 @@ class VideoPage extends StatefulWidget {
   _PicturePageState createState() => _PicturePageState();
 }
 
-class _PicturePageState extends State<VideoPage> {
+class _PicturePageState extends State<VideoPage> with ToastMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +23,14 @@ class _PicturePageState extends State<VideoPage> {
         ),
         body: Container(
           // child: Text("视频页面"),
-          child: MyCamera(),
+          child: GestureDetector(
+            onTap: () {
+              NavigatorUtil.navigateToHomeRemoveAll(context);
+            },
+            child: Center(
+              child: Text("回到首页", style: TvStyle.style_777777_72),
+            ),
+          ),
         ));
   }
 }

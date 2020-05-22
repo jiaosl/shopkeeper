@@ -1,4 +1,5 @@
 import 'package:fezs_shopkeeper/consts/params_key.dart';
+import 'package:fezs_shopkeeper/pages/change_phone_number_page.dart';
 import 'package:fezs_shopkeeper/pages/login_page.dart';
 import 'package:fezs_shopkeeper/pages/picture_page.dart';
 import 'package:fezs_shopkeeper/pages/video_page.dart';
@@ -32,5 +33,12 @@ var videoHandler = Handler(
     // int currentIndex = int.parse(indexStr);
     // bool isNumber = params['isNumber']?.first == 'true';
     return VideoPage();
+  },
+);
+
+//修改手机号
+var changePhomeNumberHandler = Handler(
+  handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+    return ChangePhoneNumberPage();
   },
 );

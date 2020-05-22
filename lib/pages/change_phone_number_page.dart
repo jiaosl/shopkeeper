@@ -1,30 +1,27 @@
-import 'package:fezs_shopkeeper/mixin/toast_mixin.dart';
-import 'package:fezs_shopkeeper/model/user_model.dart';
 import 'package:fezs_shopkeeper/redux/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
-class DemoPage extends StatefulWidget {
-  var userModel = DemoUserModel();
+class ChangePhoneNumberPage extends StatefulWidget {
   @override
-  _DemoPageState createState() => _DemoPageState();
+  _ChangePhoneNumberPageState createState() => _ChangePhoneNumberPageState();
 }
 
-class _DemoPageState extends State<DemoPage> with ToastMixin {
+class _ChangePhoneNumberPageState extends State<ChangePhoneNumberPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("首页"),
+        title: Text("手改手机号"),
         centerTitle: true,
       ),
       body: StoreProvider(
         store: store,
         child: new StoreBuilder<AppState>(builder: (context, store) {
           return StreamBuilder(
-              stream: widget.userModel.outData,
+              stream: null,
               builder: (context, snapdate) {
-                return null;
+                return Center(child: Text("修改手机号"));
               });
         }),
       ),

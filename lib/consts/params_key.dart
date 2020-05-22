@@ -11,6 +11,7 @@ class LogParamsKey {
   static const String DEBUG = "debug";
   static const String INFO = "info";
   static const String WARM = "warm";
+  static const String VERBOSE = "verbose";
 }
 
 class ApiParamsKey {

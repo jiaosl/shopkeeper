@@ -13,15 +13,11 @@ class LogManager {
 
   LogManager._create() {}
 
-  void prints(Object object) {
-    _prints(LogParamsKey.INFO, object);
-  }
-
-  void _prints(String tag, Object object) {
+  void prints(Object object, {String type = LogParamsKey.INFO}) {
     //app运行为release版本的时候isProduction为true
     const bool isProduction = const bool.fromEnvironment("dart.vm.product");
     if (!isProduction) {
-      print('$tag : $object');
+      print('$type : $object');
     }
   }
 }

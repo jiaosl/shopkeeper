@@ -7,6 +7,7 @@ class Routes {
   static String login = '/login'; //登录页面
   static String picture = '/picture'; //图片页面
   static String video = '/video'; //视频页面
+  static String changePhomeNumber = '/changePhomeNumber'; //修改手机号页面
 
   /**
    * tab栏目
@@ -30,6 +31,11 @@ class Routes {
     router.define(
       video,
       handler: videoHandler,
+      // transitionType: TransitionType.inFromRight,
+    );
+    router.define(
+      changePhomeNumber,
+      handler: changePhomeNumberHandler,
       // transitionType: TransitionType.inFromRight,
     );
   }
