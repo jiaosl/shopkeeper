@@ -5,6 +5,9 @@ import 'package:fezs_shopkeeper/api/bean/error_entity.dart';
 import 'package:fezs_shopkeeper/api/nw_method.dart';
 import 'package:fezs_shopkeeper/consts/params_key.dart';
 
+/**
+ * https://www.jianshu.com/p/9b7c29152091 
+ */
 class DioManager {
   static final DioManager _shared = DioManager._internal();
   factory DioManager() => _shared;

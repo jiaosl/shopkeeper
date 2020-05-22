@@ -1,3 +1,4 @@
+import 'package:fezs_shopkeeper/application.dart';
 import 'package:fezs_shopkeeper/components/webview.dart';
 import 'package:fezs_shopkeeper/pages/customer_management_page.dart';
 import 'package:fezs_shopkeeper/pages/knowledge_base.dart';
@@ -39,6 +40,7 @@ class _TabsPageState extends State<TabsPage> {
 
   @override
   Widget build(BuildContext context) {
+    Application.getInstance().initScreen(context);
     return Scaffold(
       // body: SafeArea(child: this._pages[this._currentIndex]),
       //第3步，将body设置成PageView,并配置PageView的controller属性

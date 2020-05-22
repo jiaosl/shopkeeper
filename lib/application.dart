@@ -1,11 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:fezs_shopkeeper/api/dio_manager.dart';
 import 'package:fezs_shopkeeper/event/event_bus.dart';
+import 'package:fezs_shopkeeper/redux/app.dart';
 import 'package:fezs_shopkeeper/routes/routes.dart';
+import 'package:fezs_shopkeeper/utils/log_manager.dart';
 import 'package:fezs_shopkeeper/utils/shared_preferences_manager.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+// import 'package:fluwx/fluwx.dart' as fluwx;
 
 class Application {
   Router router;
@@ -30,6 +33,7 @@ class Application {
     _initEventBus();
     _initStatusBarTransparent();
     _initDio();
+    _initThirdSdk();
   }
 
   _initSp() async {
@@ -60,11 +64,29 @@ class Application {
     dio.interceptors.add(LogInterceptor(responseBody: true)); //开启请求日志
   }
 
+  //注册微信 SDK
+  _initThirdSdk() async {
+    // await fluwx.register(
+    //     appId: 'wx572e2c33c466fa27',
+    //     doOnAndroid: true,
+    //     doOnIOS: true,
+    //     enableMTA: false);
+    // var result = await fluwx.isWeChatInstalled();
+    // LogManager.getInstance().prints('is installed $result');
+  }
+
   void initScreen(BuildContext context) {
     if (screenUtil == null) {
       ScreenUtil.init(context,
-          width: 750, height: 1334, allowFontScaling: false);
+          width: 1080, height: 1920, allowFontScaling: true);
       screenUtil = ScreenUtil();
     }
+  }
+
+  /**
+   * 清理数据缓存
+   */
+  clearData() {
+    store.state.clearState();
   }
 }

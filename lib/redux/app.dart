@@ -13,8 +13,11 @@ class AppState {
 
   //清理缓存
   clearState() {
-    this.user = User();
+    this.user = null;
     selectedTagList.clear();
+
+    //为了自动切换页面,更新数据
+    store.dispatch(UserUpdate(user: null));
   }
 }
 

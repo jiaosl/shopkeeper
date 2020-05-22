@@ -18,11 +18,13 @@ class _DemoPageState extends State<DemoPage> {
       ),
       body: StoreProvider(
         store: store,
-        child: StreamBuilder(
-            stream: widget.userModel.outData,
-            builder: (context, snapdate) {
-              return null;
-            }),
+        child: new StoreBuilder<AppState>(builder: (context, store) {
+          return StreamBuilder(
+              stream: widget.userModel.outData,
+              builder: (context, snapdate) {
+                return null;
+              });
+        }),
       ),
     );
   }
