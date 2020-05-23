@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:fezs_shopkeeper/components/webview.dart';
+import 'package:fezs_shopkeeper/demo/demo_webview.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -49,7 +49,7 @@ class _ImageRoutesPageState extends State<ImageRoutesPage> {
               Navigator.push(
                   context,
                   new MaterialPageRoute(
-                      builder: (context) => new WebViewPage()));
+                      builder: (context) => new DemoWebViewPage()));
             },
             child: Container(
               child: Text("去webView页面"),

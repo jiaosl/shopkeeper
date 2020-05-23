@@ -1,8 +1,8 @@
 import 'package:fezs_shopkeeper/application.dart';
 import 'package:fezs_shopkeeper/components/webview.dart';
+import 'package:fezs_shopkeeper/demo/demo_webview.dart';
 import 'package:fezs_shopkeeper/pages/customer_management_page.dart';
 import 'package:fezs_shopkeeper/pages/knowledge_base.dart';
-import 'package:fezs_shopkeeper/pages/login_page.dart';
 import 'package:fezs_shopkeeper/pages/performance_statistics.dart';
 import 'package:fezs_shopkeeper/pages/personal_center.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +28,7 @@ class _TabsPageState extends State<TabsPage> {
     PerformanceStatisticsPage(),
     KnowledgeBasePage(),
     PersonalCenterPage(),
-    WebViewPage(),
+    WebViewPage("https://fedev.feng1.com/static/manager/pages/components/getAndroidData/getAndroidData.html"),
   ];
 
   @override
