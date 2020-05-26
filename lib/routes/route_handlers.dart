@@ -16,6 +16,13 @@ var loginHandler = Handler(
   },
 );
 
+//修改手机号
+var changePhomeNumberHandler = Handler(
+  handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+    return ChangePhoneNumberPage();
+  },
+);
+
 //图片
 var pictureHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, List<String>> params) {
@@ -36,9 +43,3 @@ var videoHandler = Handler(
   },
 );
 
-//修改手机号
-var changePhomeNumberHandler = Handler(
-  handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-    return ChangePhoneNumberPage();
-  },
-);

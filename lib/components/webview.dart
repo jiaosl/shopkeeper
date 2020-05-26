@@ -1,3 +1,4 @@
+import 'package:fezs_shopkeeper/application.dart';
 import 'package:fezs_shopkeeper/utils/js_send_manager.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -35,8 +36,8 @@ class _WebViewPageState extends State<WebViewPage> {
         child: Column(
           children: <Widget>[
             Container(
-              height: ScreenUtil().setHeight(1080),
-              width: ScreenUtil().setWidth(1080),
+              height: Application.getInstance().screenUtil.setHeight(1080),
+              width: Application.getInstance().screenUtil.setWidth(1080),
               child: WebView(
                 initialUrl: widget.url,
                 javascriptMode: JavascriptMode.unrestricted,

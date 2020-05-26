@@ -26,7 +26,10 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             children: [
               Center(
-                child: Text("丰e足食"),
+                child: Text(
+                  "丰e足食",
+                  style: TextStyle(fontSize: 80),
+                ),
               ),
               buildUserName(),
               buildPassword(),
@@ -39,78 +42,87 @@ class _LoginPageState extends State<LoginPage> {
         ));
   }
 
-  Row buildUserName() {
+  Widget buildUserName() {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Text("账号"),
         Container(
-          width: 200.0,
+            alignment: Alignment.centerRight,
+            width: Application.getInstance().screenUtil.setWidth(150),
+            height: Application.getInstance().screenUtil.setWidth(120),
+            child: Text("账号")),
+        Container(
+          padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+          width: Application.getInstance().screenUtil.setWidth(800),
           child: EditText(
             hint: "请输入手机号/丰声号",
             controller: userName,
-            includingborder: true,
           ),
         )
       ],
     );
   }
 
-  Row buildPassword() {
+  Widget buildPassword() {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Text("密码"),
         Container(
-          width: 200.0,
+            alignment: Alignment.centerRight,
+            width: Application.getInstance().screenUtil.setWidth(150),
+            height: Application.getInstance().screenUtil.setWidth(120),
+            child: Text("密码")),
+        Container(
+          padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+          width: Application.getInstance().screenUtil.setWidth(800),
           child: EditText(
             hint: "请输入密码",
             controller: userName,
             obscure: true,
             keyboardType: TextInputType.visiblePassword,
-            includingborder: true,
           ),
         )
       ],
     );
   }
 
-  Row buildCaptcha() {
+  Widget buildCaptcha() {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Text("验证码"),
         Container(
-          width: 200.0,
+            alignment: Alignment.centerRight,
+            width: Application.getInstance().screenUtil.setWidth(150),
+            height: Application.getInstance().screenUtil.setWidth(120),
+            child: Text("验证码")),
+        Container(
+          padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+          width: Application.getInstance().screenUtil.setWidth(500),
           child: EditText(
             hint: "验证码",
             controller: userName,
-            includingborder: true,
           ),
         ),
         Container(
-            child: Text("点击获取验证码"),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                border: Border.all(color: Colors.grey[400], width: 2)))
+          margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+          child: buildVerificationCode(),
+          height: Application.getInstance().screenUtil.setHeight(100),
+        )
       ],
     );
   }
 
-  Row buildForgetPwd() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        Text(
+  Widget buildForgetPwd() {
+    return Container(
+        alignment: Alignment.centerRight,
+        child: Text(
           "忘记密码",
           style: TextStyle(
             color: const Color(0xffff9900),
             decoration: TextDecoration.underline,
             fontSize: 24.0,
           ),
-        )
-      ],
-    );
+        ));
   }
 
   FlatButton buildLogin() {
@@ -119,7 +131,10 @@ class _LoginPageState extends State<LoginPage> {
       highlightColor: Colors.blue[700],
       colorBrightness: Brightness.dark,
       splashColor: Colors.grey,
-      child: Text("Submit"),
+      child: Container(
+          alignment: Alignment.center,
+          width: Application.getInstance().screenUtil.setWidth(800),
+          child: Text("Submit")),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
       onPressed: () {},
     );
@@ -128,7 +143,26 @@ class _LoginPageState extends State<LoginPage> {
   OutlineButton buildRegister() {
     return OutlineButton(
       onPressed: () {},
-      child: Text("边线按钮"),
+      child: Container(
+          alignment: Alignment.center,
+          width: Application.getInstance().screenUtil.setWidth(800),
+          child: Text("边线按钮")),
+      textColor: Colors.red,
+      splashColor: Colors.green,
+      highlightColor: Colors.black,
+      shape: RoundedRectangleBorder(
+          side: BorderSide(
+            color: Colors.red,
+            width: 1,
+          ),
+          borderRadius: BorderRadius.circular(5)),
+    );
+  }
+
+  OutlineButton buildVerificationCode() {
+    return OutlineButton(
+      onPressed: () {},
+      child: Container(child: Text("获取验证码")),
       textColor: Colors.red,
       splashColor: Colors.green,
       highlightColor: Colors.black,

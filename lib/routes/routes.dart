@@ -5,9 +5,9 @@ import './route_handlers.dart';
 class Routes {
   static String root = '/';
   static String login = '/login'; //登录页面
+  static String changePhomeNumber = '/changePhomeNumber'; //修改手机号页面
   static String picture = '/picture'; //图片页面
   static String video = '/video'; //视频页面
-  static String changePhomeNumber = '/changePhomeNumber'; //修改手机号页面
 
   /**
    * tab栏目
@@ -24,6 +24,11 @@ class Routes {
       // transitionType: TransitionType.inFromRight,
     );
     router.define(
+      changePhomeNumber,
+      handler: changePhomeNumberHandler,
+      // transitionType: TransitionType.inFromRight,
+    );
+    router.define(
       picture,
       handler: pictureHandler,
       // transitionType: TransitionType.inFromRight,
@@ -31,11 +36,6 @@ class Routes {
     router.define(
       video,
       handler: videoHandler,
-      // transitionType: TransitionType.inFromRight,
-    );
-    router.define(
-      changePhomeNumber,
-      handler: changePhomeNumberHandler,
       // transitionType: TransitionType.inFromRight,
     );
   }
