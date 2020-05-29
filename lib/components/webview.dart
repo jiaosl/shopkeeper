@@ -3,8 +3,6 @@ import 'package:fezs_shopkeeper/utils/js_send_manager.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:webview_flutter/webview_flutter.dart';
 
 import 'dart:convert' as convert;
@@ -43,6 +41,7 @@ class _WebViewPageState extends State<WebViewPage> {
                 javascriptMode: JavascriptMode.unrestricted,
                 onWebViewCreated: (controller) {
                   _controller = controller;
+                  JsSendManager.getInstance().initController(controller);
                 },
                 javascriptChannels: <JavascriptChannel>[
                   JavascriptChannel(
@@ -81,9 +80,10 @@ class _WebViewPageState extends State<WebViewPage> {
       "https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4142587453,3986655608&fm=26&gp=0.jpg"
     ];
 
-    JsSendManager.getInstance().send3001(list, (json) {
-      String imgJson = json;
-      _controller.evaluateJavascript("showToast('$imgJson','list')");
-    });
+    JsSendManager.getInstance().send3001(list, null);
+    // JsSendManager.getInstance().send3001(list, (json) {
+    //   String imgJson = json;
+    //   _controller.evaluateJavascript("showToast('$imgJson','list')");
+    // });
   }
 }

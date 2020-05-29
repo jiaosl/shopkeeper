@@ -4,8 +4,11 @@ import 'package:fezs_shopkeeper/bean/js_location_bean.dart' as jsLocation;
 import 'package:fezs_shopkeeper/bean/js_qrcode_bean.dart' as jsQrcode;
 import 'dart:convert' as convert;
 
+import 'package:webview_flutter/webview_flutter.dart';
+
 class JsSendManager {
   static final JsSendManager _singleton = JsSendManager._create();
+  WebViewController _controller;
 
   factory JsSendManager.getInstance() {
     return _singleton;
@@ -24,7 +27,7 @@ class JsSendManager {
     data.imgs = imgs;
     data.token = "token";
     String jsonStr = convert.jsonEncode(bean);
-    method(jsonStr);
+    _sendMsg(method, jsonStr);
   }
 
   /**
@@ -42,7 +45,7 @@ class JsSendManager {
     jsLocation.Data data = jsLocation.Data.fromJson(map);
     bean.data = data;
     String jsonStr = convert.jsonEncode(bean);
-    method(jsonStr);
+    _sendMsg(method, jsonStr);
   }
 
   /**
@@ -57,7 +60,14 @@ class JsSendManager {
     jsQrcode.Data data = jsQrcode.Data.fromJson(map);
     bean.data = data;
     String jsonStr = convert.jsonEncode(bean);
-    method(jsonStr);
+    _sendMsg(method, jsonStr);
+  }
+
+  /**
+   * 初始化controller
+   */
+  void initController(WebViewController controller) {
+    this._controller = controller;
   }
 
   /**
@@ -65,5 +75,16 @@ class JsSendManager {
    */
   void combinationBaseParams(Map<String, dynamic> map) {
     map[JsCommunicationParamsKey.TOKEN] = "token";
+  }
+
+  /**
+   * 发送数据
+   */
+  void _sendMsg(Function method, String jsonStr) {
+    if (method == null) {
+      _controller.evaluateJavascript("showToast('$jsonStr')");
+    } else {
+      method(jsonStr);
+    }
   }
 }
